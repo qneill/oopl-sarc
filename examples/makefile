@@ -7,12 +7,12 @@ FILES :=                \
     Coverage2           \
     Coverage3
 
-%.app: %.c++
+%: %.c++
 	g++-5 -pedantic -std=c++14 -Wall -Weffc++ $< -o $@ -lgtest -lgtest_main -pthread
 	-clang-check -extra-arg=-std=c++11          $< --
 	-clang-check -extra-arg=-std=c++11 -analyze $< --
 
-%.c++x: %.app
+%.c++x: %
 	./$<
 
 all: $(FILES)
