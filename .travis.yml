@@ -10,11 +10,8 @@ addons:
     sources:
       - ubuntu-toolchain-r-test
     packages:
-      - libboost-all-dev
-      - doxygen
       - g++-5
       - libgtest-dev
-      - valgrind
 
 before_install:
     - cat .travis.yml
